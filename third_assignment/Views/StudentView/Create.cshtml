@@ -1,0 +1,42 @@
+﻿@model StudentViewModel
+
+
+@{
+    ViewData["Title"] = "create";
+}
+
+<h1>Create Student</h1>
+
+<form asp-action="Create" method="POST">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="s.Name" class="control-label"></label>
+        <input asp-for="s.Name" class="form-control" />
+        <span asp-validation-for="s.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="s.Address" class="control-label"></label>
+        <input asp-for="s.Address" class="form-control" />
+        <span asp-validation-for="s.Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="s.Age" class="control-label"></label>
+        <input asp-for="s.Age" class="form-control" />
+        <span asp-validation-for="s.Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="s.Faculty" class="control-label"></label>
+        <input asp-for="s.Faculty" class="form-control" />
+        <span asp-validation-for="s.Faculty" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
